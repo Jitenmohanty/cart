@@ -1,16 +1,12 @@
 import React from "react";
-
-class CartItem extends React.Component {
-   
-
     //You can also use bind function for bind reference on Normal function..
-
-   
-  render() {
-    const {price,title,qty} = this.props.products;
-    const{products,decreseQuantity,increseQuantity,onDeleteButton}  = this.props;
+ 
+  function CartItem(props){
+    const {price,title,qty} = props.products;
+    const{products,decreseQuantity,increseQuantity,onDeleteButton}  = props;
     return (
       <div className="cart-item">
+      
         <div className="left-block">
           <img style={style.img}  alt=""/>
         </div>
@@ -28,7 +24,6 @@ class CartItem extends React.Component {
       </div>
     );
   }
-}
 
 const style = {
   img: {
