@@ -12,21 +12,21 @@ class App extends React.Component {
           price: 999,
           title: "Phone",
           qty: 1,
-          img: "",
+          img: "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=580&q=80",
           id: 1,
         },
         {
           price: 99,
           title: "Watch",
           qty: 13,
-          img: "",
+          img: "https://images.unsplash.com/photo-1524805444758-089113d48a6d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=388&q=80",
           id: 2,
         },
         {
           price: 99449,
           title: "Laptop",
           qty: 18,
-          img: "",
+          img: "https://images.unsplash.com/photo-1531297484001-80022131f5a1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=820&q=80",
           id: 3,
         },
       ],
@@ -74,6 +74,15 @@ class App extends React.Component {
     return count;
   };
 
+  getTotal = () => {
+    const{products} = this.state;
+    let totalPrice = 0;
+
+    products.map((product)=>{
+      totalPrice = totalPrice + product.qty * product.price;
+    })
+    return totalPrice;
+  };
   render() {
     const { products } = this.state;
     return (
@@ -85,6 +94,7 @@ class App extends React.Component {
           decreseQuantity={this.handleDecreseQuantity}
           onDeleteButton={this.handleDeleteButton}
         />
+        <div style={{fontSize:25,marginLeft:80,color:'grey'}}>Total:{this.getTotal()}</div>
       </div>
     );
   }

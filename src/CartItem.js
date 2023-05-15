@@ -8,7 +8,7 @@ import React from "react";
       <div className="cart-item">
       
         <div className="left-block">
-          <img style={style.img}  alt=""/>
+          <img style={style.img} src={products.img} alt=""/>
         </div>
         <div className="right-block">
           <div style={{ fontSize: 25 }}>{title}</div>
@@ -21,6 +21,7 @@ import React from "react";
             <img src="https://cdn-icons-png.flaticon.com/128/3096/3096687.png" className="action-icons" alt="Delete" onClick={()=>onDeleteButton(products.id)} />
           </div>
         </div>
+       
       </div>
     );
   }
